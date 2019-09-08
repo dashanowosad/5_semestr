@@ -1,6 +1,8 @@
 #!/bin/bash
 \E[?25l
 clear
+
+
 echo -e "\E[43;30m Дата \c" & tput sgr0 ; echo -e "   \c" ; date
 echo -e "\E[43;30m Имя учетной записи \c" & tput sgr0; echo -e "   \c" ; whoami
 echo -e "\E[43;30m Доменное имя ПК \c" & tput sgr0 ; echo -e "   \c"; hostname
@@ -15,7 +17,9 @@ echo "Оперативная память:"
 echo -e "	Всего:  \c" & free -h | grep "Память" | cut -d' ' -f9
 echo -e "        Доступно: \c" & free -h | grep "Память" | cut -d' ' -f49
 echo "Жесткий диск:"
-echo -e "	Всего: \c" 
+echo -e "	Всего: \c"  & lsblk | grep -w "/" | awk '{print $4}'
+echo -e "	Доступно: \c" & df -h | grep -w "/" | awk '{print $4}'
+echo -e "	Смонтированно в корневую дерикторию: \c" & df -h | grep -w "/" | awk '{print $2}'
 
 echo " "; echo " ";
 
