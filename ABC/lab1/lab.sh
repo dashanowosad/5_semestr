@@ -30,7 +30,7 @@ echo -e "           интерфейса                                        
 echo -e "-------------------------------------------------------------------------------|"
 for ((i = 1; i <= $(ls -A /sys/class/net |wc -l); i++))
 do
-echo "$i    |       $(ip a | grep -w -m 1 "$i" | awk '{print $2}' | sed -e s/://g)    |     $(ip a  | grep -A 1 -w -m 1 "$i" | grep -w "link/ether" |  awk '{print $2}' )  |  $(ip a | grep -m 2 -w -A 3 "$i" | grep -w -m 1 "inet" | awk '{print $2}')"   
+echo "$i    |       $(ip a | grep -w -m 1 "$i" | awk '{print $2}' | sed -e s/://g)     |     $(ip a  | grep -A 1 -w -m 1 "$i" | grep -w "link/ether" |  awk '{print $2}' ) | $(ip a | grep -m 2 -w -A 3 "$i" | grep -w -m 1 "inet" | awk '{print $2}') | $(sudo ethtool $(ip a | grep -w -m 1 "$i" | awk '{print $2}' | sed -e s/://g) | grep -w "Speed"| awk '{print $2}') "   
 done
 
 #if ("$(ip a  | grep -A 1 -w -m 1 "3" | grep -w "link/ether"  )" -eq "$(ip a  | grep -A 1 -w -m 1 "3" | grep -w "link/ether")"  )
