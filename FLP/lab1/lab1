@@ -1,0 +1,13 @@
+Вариант 1
+Задание №1
+(cadr(cadaar '(((1 (2 *)) 3) 4)))
+Задание № 2
+(cons nil nil) //nil добавляется в голову списка 
+Задание №3
+а)  (cons 1 (cons (cons 2 (cons 3 nil)) nil))
+б)  (list 1 (list 2 3))
+Задание № 4
+(defun F (x) (append (last x) (cdr(butlast x)) (cons(car x) nil) ))
+
+
+(f '(1 2 3 4 5))
