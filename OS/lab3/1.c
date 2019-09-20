@@ -7,7 +7,7 @@ void recreation();
 int main(){
 pid_t child_pid, parent_pid;
 int i = 0;
-fprintf (stdout, "Before RECREATION %i\n",parent_pid = (int) getpid);
+fprintf (stdout, "Before RECREATION %i\n",parent_pid = (int) getpid());
 
 child_pid = fork();
 while(i++ < 5)
