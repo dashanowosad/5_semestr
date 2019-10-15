@@ -1,0 +1,30 @@
+(defun c (x)
+	(cond
+		((NULL (crd x)) (list (cdr x)))
+		(T (list (+ (car x) (car(last x)))) (c (cdr(butlast x))))
+		)
+)
+
+
+
+(defun c (x)(cond ((NULL (crd x)) (list (cdr x)))(T (list (+ (car x) (car(last x)))) (c (cdr(butlast x))))))
+
+
+(defun c (x) (list (+ (car x) (car(last x)))) (c (cdr(butlast x))))
+
+
+
+
+
+(defun c (x l)
+	(cond
+		((null x) l)
+		((null l) x)
+		
+		
+		(T (list(car x) (car l)) (c (cdr x) (cdr l)))
+		)
+)
+
+
+

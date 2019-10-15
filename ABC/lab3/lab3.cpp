@@ -74,13 +74,13 @@ int main(void){
 	
 	for(j = 0; j < 20; j++){
 		auto start = std::chrono::system_clock::now();
-		for(i = 0; i < 10000000; i++)
+		for(i = 0; i < 90000000; i++)
 			sinx(x);
 		std::chrono::duration<double> dur = std::chrono::system_clock::now() - start;
 		MatO.push_back(dur.count());
 	}
 	auto start = std::chrono::system_clock::now();
-		for(i = 0; i < 10000000; i++)
+		for(i = 0; i < 90000000; i++)
 			sinx(x);
 		std::chrono::duration<double> dur = std::chrono::system_clock::now() - start;
 	
@@ -88,39 +88,39 @@ int main(void){
 	
 	for(j = 0; j < 20; j++){
 		start1 = clock();
-		for(i = 0; i < 10000000; i++)
+		for(i = 0; i < 90000000; i++)
 			sinx(x);
 		stop = clock();
 		MatO1.push_back((double)(stop-start1)/CLOCKS_PER_SEC);
 	}
 	start1 = clock();
-	for(i = 0; i < 10000000; i++)
+	for(i = 0; i < 90000000; i++)
 		sinx(x);
 	stop = clock();
 	
 	
 	for(j = 0; j < 20; j++){
 		time_start();
-		for(i = 0; i < 10000000; i++)
+		for(i = 0; i < 90000000; i++)
 			sinx(x);
 		res = time_stop();
 		MatO2.push_back(res/1000);
 	}
 	time_start();
-	for(i = 0; i < 10000000; i++)
+	for(i = 0; i < 90000000; i++)
 		sinx(x);
 	res = time_stop();
 	
 	
 	for(j = 0; j < 20; j++){
 		t1 = get_time();
-		for(i = 0; i < 10000000; i++)
+		for(i = 0; i < 90000000; i++)
 			sinx(x);
 		t2 = get_time();
 		MatO3.push_back(t2-t1);
 	}
 	t1 = get_time();
-	for(i = 0; i < 10000000; i++)
+	for(i = 0; i < 90000000; i++)
 		sinx(x);
 	t2 = get_time();
 	
@@ -135,6 +135,9 @@ int main(void){
     	sum_of_MatO2 += n;
 	for (auto& n : MatO3)
     	sum_of_MatO3 += n;
+	
+	
+	
 	
 	std::cout << "Sin: " << std::setprecision(30) << sinx(x) << std::endl << std::endl;
 	
