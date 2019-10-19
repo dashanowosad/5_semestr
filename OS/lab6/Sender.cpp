@@ -8,6 +8,7 @@
 
 HINSTANCE hInst;
 TCHAR buf[256];
+HWND Wnd;
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 //void WINAPI MyDisplay( LPSTR, LPSTR, DWORD );
@@ -46,6 +47,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	ShowWindow(hWnd,nCmdShow);
 	UpdateWindow(hWnd);
+	
 
 	////////////////////
 
@@ -54,16 +56,17 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	while(GetMessage(&message,NULL,0,0)){
 		TranslateMessage(&message);
 		DispatchMessage(&message);
+		Wnd = FindWindow(_T("Client"), _T("Client"));
 	}
 
 	return 0;
 }
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
-	static HWND hEdit, hButton, hButton_C, Wnd;
+	static HWND hEdit, hButton, hButton_C;
 	LPSTR k;
 	COPYDATASTRUCT data;
-
+	PCOPYDATASTRUCT D;
 					
 	switch(message){
 		case WM_CREATE:
@@ -72,13 +75,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
 			hButton_C = CreateWindow(("Button"), ("Clear"), WS_CHILD | WS_VISIBLE  | BS_PUSHBUTTON, 200, 150, 50, 35, hWnd, (HMENU)ID_BUTTON_C, hInst, 0);
 
 			
-			Wnd = FindWindow(_T("Client"), _T("Client"));
-            if (Wnd) EnableWindow(hButton, TRUE);
-			else EnableWindow(hButton, FALSE);
+			
+            //if (Wnd) EnableWindow(hButton, TRUE);
+			//else EnableWindow(hButton, FALSE);
 
 
 			break;
-			
+		case WM_COPYDATA:
+			buf[0] = 0;
+			SetWindowText(hEdit, buf);
+			D = (PCOPYDATASTRUCT) lParam;
+			k = (LPSTR) (D->lpData);
+            strcat(buf, TEXT(k));
+            SetWindowText(hEdit, buf);
+  			break;
+  			
 		case WM_DESTROY:
       		PostQuitMessage(0);
       		break;
@@ -91,6 +102,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
 				data.cbData = strlen(buf);
 				data.lpData=buf;
 				SendMessage(Wnd, WM_COPYDATA, (WPARAM)GetFocus(), (LPARAM)&data);
+				
 
             }
 			if((LOWORD(wParam)==ID_BUTTON_C)&&(HIWORD(wParam)==BN_CLICKED))
