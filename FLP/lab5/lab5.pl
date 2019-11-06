@@ -68,7 +68,7 @@ func4:-
   B is 1,
   A is 1,
   K is 1,
-  (N > 0, write('1 1'), fib(A,B,N,K);write('')),
+  (N > 0, write('1 1 '), fib(A,B,N,K);write('')),
   prov(N),!.
 
 
