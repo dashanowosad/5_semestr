@@ -14,8 +14,6 @@ int main(void){
 	char *pName;
 	char **pNames;
 	DWORD i;
-	FILE *f;
-	f = fopen("information.txt","w");
 	if (!MapAndLoad("kernel32.dll",NULL,&LoadedImage,TRUE,TRUE)){
 		printf("Somthing`s wrong!\n");
 		exit(1);

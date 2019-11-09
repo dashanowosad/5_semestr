@@ -19,8 +19,6 @@ int main(void){
 	char **pNames;
 	DWORD i;
 	LPVOID DLLName;
-	FILE *f;
-	f = fopen("information.txt","w");
 	if (!MapAndLoad("c:\\Windows\\system32\\notepad.exe ",NULL,&LoadedImage,FALSE,TRUE)){
 		printf("Somthing`s wrong!\n");
 		exit(1);
