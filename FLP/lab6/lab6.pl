@@ -21,7 +21,7 @@
         (Head =< C, Head >= B, append([Head],L3,L33); L33 = L3),
         select(Head,List,List2),
 
-        (List2 \== [], first(List2,B,C,L11,L22,L33);write(L11), write(' '), write(L33), write(' '), write(L22)).
+        (List2 \== [], first(List2,B,C,L11,L22,L33),!;reverse(L11, L111), reverse(L22, L222), reverse(L33, L333), write(L111), write(' '), write(L333), write(' '), write(L222)).
 
 
 func1:-
@@ -41,21 +41,20 @@ func1:-
   first(List,B1,C1,L1,L2,L3).
 /*Задание № 2*/
 
-find_max(List,[Head|Tail],Max):-
-  Max1 is Head,
-  Max < Head,
-  find_max(List,Tail, Max1).
+find_max([Max],Max):-!.
+find_max([Head|Tail],Max):-
+  find_max(Tail,Max1),
+  Max1 > Head, !, Max = Max1; Max = Head.
 
-find_max(List,[_|Tail],Max):-
-  find_max(List,Tail,Max).
-
-find_max(List,[], Max):-
-  write(Max).
-
+index([Head|Tail],Max,L,S):-
+  S1 is S + 1,
+  (Head == Max, append([S1],L,L1); L1 = L),
+  (Tail \== [], index(Tail,Max,L1,S1),!; reverse(L1,L2), write(L2)).
 
 func2:-
   List = [3,5,4,2,5,5,0],
-  List1 = List,
-  List1 = [Head|_],
-  Max is Head,
-  find_max(List,List1,Max).
+  List = [Head|_],
+  L = [],
+  S is 0,
+  find_max(List,Max),
+  index(List,Max,L,S).
