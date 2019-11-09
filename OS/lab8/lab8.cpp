@@ -28,9 +28,9 @@ INT main() {
 
   for(i = 0; i < THREADS_NUMBER; i++) 
     hThreads[i] = CreateThread(NULL, 0, &ThreadProc, hMutex, 0, NULL);
-  WaitForMultipleObjects(THREADS_NUMBER, hThreads, TRUE, INFINITE);
   wsprintf(szMessage, TEXT("Expected value = %d\r\n"), 20000);
   WriteConsole(hStdOut, szMessage, lstrlen(szMessage), &dwTemp, NULL);
+  WaitForMultipleObjects(THREADS_NUMBER, hThreads, TRUE, INFINITE);
   wsprintf(szMessage, TEXT("Value = %d\r\n"), dwCounter);
   WriteConsole(hStdOut, szMessage, lstrlen(szMessage), &dwTemp, NULL);
 
