@@ -48,3 +48,43 @@ func1:-
   S is 1,
   Kol = [],
   kol(L1,L1,S,Kol).
+
+
+/*Задание №2*/
+%запись в конечный файл
+w(S,Res):-
+  R is Res mod 10,
+  write('Строка № '),
+  write(S),
+  write(' содержит '),
+  write(Res),
+  %write(' слов '),
+  (Res =:= 1,write(' слово ');write('')),
+  (R =:= 2,write(' слова ');write('')),
+  (R =:= 3,write(' слова ');write('')),
+  (R =:= 4,write(' слова ');write('')),
+  (R >=5 ,write(' слов ');write('')),
+  nl.
+
+%подсчет слов в строке
+chet([Head|Tail],Res,S):-
+  (Head =:= 32, Res1 is Res+1; Res1 is Res),
+  (Tail \== [], chet(Tail,Res1,S),!;w(S,Res1)).
+
+%чтение из файла
+r(F1,S):-
+  read_line_to_codes(F1,L),
+  Res is 1,
+  S1 is S + 1,
+  chet(L,Res,S1),
+  (at_end_of_stream, write('');r(F1,S1),!).
+
+func2:-
+  open('1.txt',read,F1),
+  open('2.txt',write,F2),
+  set_input(F1),
+  set_output(F2),
+  S is 0,
+  r(F1,S),
+  close(F1),
+  close(F2).
