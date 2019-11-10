@@ -74,8 +74,10 @@ insert(X,Sort_list,[X|Sort_list]).
 
 sch(L,[Head|Tail],S,L2):-
   Tail = [H|_],
-  (Head =:= H, S1 is S+1, L22 = L2; append([S],L2,L22), S1 is 1, S2 is S+1),
-  (Tail \== [], sch(L,Tail,S1,L22),!; S2 is S + 1,append([S2],L22,L222),f(L,L222)).
+  (Head =:= H, S1 is S+1, L22 = L2; append([S],L2,L22), S1 is 1),
+  (Tail \== [], sch(L,Tail,S1,L22),!;
+   (Head =:= H, S2 is S1 + 1; S2 is S1),
+    append([S2],L22,L222),f(L,L222)).
 
  del(L,LIST,List,L1):-
    List = [Head|Tail],
@@ -97,7 +99,7 @@ f2(L,Del):-
     LRes = [],
     find(L,Del,Max,LRes).
   func3:-
-    List = [0,3,5,7,1,5,3,0,3,3,5,7,0,5,0,7],
+    List = [0,3,5,7,1,5,3,0,3,3,5,7,0,5,0,8],
     in_sort(List,L1),
 
     L2 = [],
