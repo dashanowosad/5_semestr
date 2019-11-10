@@ -53,8 +53,53 @@ index([Head|Tail],Max,L,S):-
 
 func2:-
   List = [3,5,4,2,5,5,0],
-  List = [Head|_],
   L = [],
   S is 0,
   find_max(List,Max),
   index(List,Max,L,S).
+
+  /*Задание № 3*/
+
+in_sort([ ],[ ]).
+in_sort([X|Tail],Sort_list):-
+  in_sort(Tail,Sort_tail),
+  insert(X,Sort_tail,Sort_list).
+
+insert(X,[Y|Sort_list],[Y|Sort_list1]):-
+  X@>Y,!,
+  insert(X,Sort_list,Sort_list1).
+
+insert(X,Sort_list,[X|Sort_list]).
+
+
+sch(L,[Head|Tail],S,L2):-
+  Tail = [H|_],
+  (Head =:= H, S1 is S+1, L22 = L2; append([S],L2,L22), S1 is 1, S2 is S+1),
+  (Tail \== [], sch(L,Tail,S1,L22),!; S2 is S + 1,append([S2],L22,L222),f(L,L222)).
+
+ del(L,LIST,List,L1):-
+   List = [Head|Tail],
+   append([Head],L1,L2),
+   delete(List,Head,List2),
+   (Tail \== [], del(L,LIST,List2,L2),!;f2(L,L2)).
+
+   find([Head|Tail],Del,Max,LRes):-
+     Del = [H|T],
+     (Head =:= Max, append([H],LRes,LRes1); LRes1 = LRes),
+     (Tail \== [], find(Tail,T,Max,LRes1),!; write(LRes1)).
+
+f(List,L):-
+  L1 = [],
+  del(L,List,List,L1).
+
+f2(L,Del):-
+    find_max(L,Max),
+    LRes = [],
+    find(L,Del,Max,LRes).
+  func3:-
+    List = [0,3,5,7,1,5,3,0,3,3,5,7,0,5,0,7],
+    in_sort(List,L1),
+
+    L2 = [],
+    S is 1,
+    sch(L1,L1,S,L2).
