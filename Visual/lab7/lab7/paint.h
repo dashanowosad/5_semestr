@@ -1,13 +1,19 @@
 #ifndef PAINT_H
 #define PAINT_H
 
-#include <QPainter>
+#include <QPolygonF>
 #include <QGraphicsPolygonItem>
-#include <QPolygon>
+#include <QPen>
 
-
-
-void paint(QGraphicsPolygonItem *Polygon);
-
+class Paint
+{
+public:
+    Paint();
+    QGraphicsPolygonItem* GetPolygon();
+private:
+    QGraphicsPolygonItem* Polygon;
+    QPolygonF p;
+    QPolygonF p1;
+};
 
 #endif // PAINT_H
