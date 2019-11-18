@@ -1,18 +1,4 @@
 /*Задание № 1*/
-/*[3,7,1,-3,5,8,0,9,2]*/
-
-/*first(List,A,L1):-
-  List = [Head|Tail],
-  append([Head],L1,L2),
-  select(Head,List,List2),
-
-  (List \== [],
-    (Head < A, first(List2,A,L2); first(List2,A,L1));
-    write(L2)).*/
-
-/*(Head < B, append([Head],L1,L11), L22 = L2; L11 = L1, L22 = L2),*/
-
-
     first(List,B,C,L1,L2,L3):-
         List = [Head|_],
 
