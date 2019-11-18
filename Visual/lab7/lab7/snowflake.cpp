@@ -5,6 +5,7 @@ snowflake::snowflake()
 
 }
 snowflake::snowflake(int width, int height, QGraphicsScene &scene){
+
     this->x = (width/2 - this->w/2);
     this->y = (height/2 - this->h/2);
     pic.load("../Images/snower.webp");
@@ -12,6 +13,10 @@ snowflake::snowflake(int width, int height, QGraphicsScene &scene){
     this->s = scene.addPixmap(pic);
     this->s->setPos(x, y);
     //this->s->setFlag(QGraphicsPixmapItem::ItemIsMovable);
+    timer = new QTimer();
+
+    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+    timer->start(10);
 }
 
 double snowflake::getX(){
@@ -29,10 +34,11 @@ void snowflake::setY(double Y){
     this->y = Y;
 }
 
-void snowflake::update(QGraphicsScene &scene){
+void snowflake::update(){
 
-    this->s->setPos(20, 20);
+    this->s->setPos(this->x+=1, 20);
 
+/*
     if (!scene.collidingItems(s).isEmpty())
             rightDir = !rightDir;
     if(rightDir)
@@ -41,13 +47,14 @@ void snowflake::update(QGraphicsScene &scene){
         setX(this->x - 1);
     this->s->setPos(this->x, this->y);
 
+*/
 }
 
 
 void snowflake::move(QGraphicsScene &scene){
     timer = new QTimer();
 
-    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(update(scene)));
+    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(update()));
     timer->start(10);
 
 }

@@ -23,9 +23,8 @@ public:
     void move(QGraphicsScene &scene);
     virtual ~snowflake(){};
 public slots:
-    void update(QGraphicsScene &scene);
+    void update();
 private:
-
     bool rightDir = true;
     double x, y;
     int w = 128, h = 128;

@@ -50,6 +50,6 @@ int main(int argc, char *argv[])
     shar3->setFlag(QGraphicsPixmapItem::ItemIsMovable);
 
     snowflake flake(w, h, scene);
-    flake.move(scene);
+    //flake.move(scene);
     return a.exec();
 }
