@@ -1,4 +1,5 @@
 #include "paint.h"
+#include "snowflake.h"
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
@@ -43,12 +44,7 @@ int main(int argc, char *argv[])
     shar2->setFlag(QGraphicsPixmapItem::ItemIsMovable);
     shar3->setFlag(QGraphicsPixmapItem::ItemIsMovable);
 
-
-    pic.load("../Images/snower.webp");
-    pic =  pic.scaled(QSize(128, 128));
-    QGraphicsPixmapItem * snowflake = scene.addPixmap(pic);
-    snowflake->setPos(w/2-64,h/2-64);
-    snowflake->setFlag(QGraphicsPixmapItem::ItemIsMovable);
+    snowflake flake(w, h, scene);
 
     return a.exec();
 }

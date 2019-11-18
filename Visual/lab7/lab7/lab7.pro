@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        paint.cpp
+        paint.cpp \
+        snowflake.cpp
 
 HEADERS += \
-    paint.h
+    paint.h \
+    snowflake.h
 
 FORMS +=
 
