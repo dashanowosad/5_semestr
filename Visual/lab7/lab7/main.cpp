@@ -17,6 +17,11 @@ int main(int argc, char *argv[])
     view.setSceneRect(0, 0, w, h);
     view.fitInView(0,  0, w, h, Qt::KeepAspectRatio);
 
+    //добавили стены
+    scene.addRect(-105, -100, 20, h + (105*2), QPen(), QColor(30,32,61));
+    scene.addRect(-105, -80, w + (105*2), 20, QPen(), QColor(30,32,61));
+    scene.addRect(w+84, -100, 20, h + (105*2), QPen(), QColor(30,32,61));
+    scene.addRect(-105, h+58, w + (105*2), 20, QPen(), QColor(30,32,61));
 
 //отобразили ель
     Paint el;
@@ -45,6 +50,6 @@ int main(int argc, char *argv[])
     shar3->setFlag(QGraphicsPixmapItem::ItemIsMovable);
 
     snowflake flake(w, h, scene);
-
+    flake.move(scene);
     return a.exec();
 }
