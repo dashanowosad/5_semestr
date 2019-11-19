@@ -18,8 +18,8 @@ int main(void){
       printf("%g\n", sh1);
     WaitForSingleObject(hMutex2, INFINITE); //capture
       printf("%d\n", sh2);
-    ReleaseMutex(hMutex2); //release
     ReleaseMutex(hMutex1); //release
+    ReleaseMutex(hMutex2); //release
   }
   return 0;
 }
@@ -27,10 +27,10 @@ int main(void){
 
 void Thread(void* pParams){
   while (1) {
-    WaitForSingleObject(hMutex2, INFINITE); //mutex capture
-      sh2++;
     WaitForSingleObject(hMutex1, INFINITE); //mutex capture
       sh1 += 0.1;
+    WaitForSingleObject(hMutex2, INFINITE); //mutex capture
+      sh2 += 1;
     ReleaseMutex(hMutex1); //mutex release
     ReleaseMutex(hMutex2); //mutex release
   }
