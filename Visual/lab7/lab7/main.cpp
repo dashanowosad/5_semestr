@@ -5,8 +5,7 @@
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
     int w = 800, h = 600;
     QApplication a(argc, argv);
 
@@ -17,7 +16,7 @@ int main(int argc, char *argv[])
     view.setSceneRect(0, 0, w, h);
     view.fitInView(0,  0, w, h, Qt::KeepAspectRatio);
 
-    //добавили стены
+//добавили стены
     scene.addRect(-105, -100, 20, h + (105*2), QPen(), QColor(30,32,61));
     scene.addRect(-105, -80, w + (105*2), 20, QPen(), QColor(30,32,61));
     scene.addRect(w+84, -100, 20, h + (105*2), QPen(), QColor(30,32,61));

@@ -20,13 +20,12 @@ public:
     void setX(double X);
     void setY(double Y);
     void move();
-    virtual ~snowflake(){};
+    virtual ~snowflake(){}
 public slots:
     void update();
 private:
     double d = 0;
-    double R = 10;
-    QGraphicsScene *scene = nullptr;
+    QGraphicsScene *scene;
     bool rightDir = true;
     bool UpDIr = true;
     double x, y;

@@ -1,7 +1,5 @@
 #include "paint.h"
-Paint::Paint()
-{
-
+Paint::Paint() {
     Polygon = new QGraphicsPolygonItem();
     p << QPointF(80,400);
     p << QPointF(240,400);
@@ -15,7 +13,6 @@ Paint::Paint()
     p << QPointF(140,260);
     p << QPointF(100,320);
     p << QPointF(140,320);
-
 
 
     Polygon->setPen(QPen(QColor(42,92,3)));
