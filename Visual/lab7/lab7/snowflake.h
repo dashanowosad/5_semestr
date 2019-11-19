@@ -7,8 +7,7 @@
 #include <QGraphicsPixmapItem>
 #include <QTimer>
 #include <QMainWindow>
-
-
+#include <cmath>
 class snowflake : QMainWindow
 {
     Q_OBJECT
@@ -20,12 +19,16 @@ public:
     double getY();
     void setX(double X);
     void setY(double Y);
-    void move(QGraphicsScene &scene);
+    void move();
     virtual ~snowflake(){};
 public slots:
     void update();
 private:
+    double d = 0;
+    double R = 10;
+    QGraphicsScene *scene = nullptr;
     bool rightDir = true;
+    bool UpDIr = true;
     double x, y;
     int w = 128, h = 128;
     QTimer *timer;
