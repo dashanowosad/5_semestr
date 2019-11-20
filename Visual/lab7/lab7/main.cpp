@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
     Paint el;
     view.show();
     scene.addItem(el.GetPolygon());
-
+    scene.addItem(el.GetRect());
 //добавление изображение шариков
     QPixmap pic;
     pic.load("../Images/1.png");

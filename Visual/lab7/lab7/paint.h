@@ -10,10 +10,11 @@ class Paint
 public:
     Paint();
     QGraphicsPolygonItem* GetPolygon();
+    QGraphicsRectItem* GetRect();
 private:
     QGraphicsPolygonItem* Polygon;
+    QGraphicsRectItem* pRectItem;
     QPolygonF p;
-    QPolygonF p1;
 };
 
 #endif // PAINT_H

@@ -19,14 +19,6 @@ snowflake::snowflake(int width, int height, QGraphicsScene &scene){
 
 }
 
-double snowflake::getX(){
-    return this->x;
-}
-
-double snowflake::getY(){
-    return this->y;
-}
-
 void snowflake::setX(double X){
     this->x = X;
 }
@@ -41,7 +33,7 @@ void snowflake::update(){
         setX(this->x + 1);
     else
         setX(this->x - 1);
-    setY(cos(d)*30 + 60);
+    setY(cos(d)*30 + 100);
     this-> d += 0.05;
     this->s->setPos(this->x, this->y);
 }

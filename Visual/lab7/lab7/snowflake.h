@@ -15,8 +15,6 @@ class snowflake : QMainWindow
 public:
     snowflake();
     snowflake(int width, int height, QGraphicsScene &scene);
-    double getX();
-    double getY();
     void setX(double X);
     void setY(double Y);
     void move();
