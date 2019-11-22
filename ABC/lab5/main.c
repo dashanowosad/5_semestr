@@ -7,21 +7,21 @@
 void fillMatrix(int N, int la, double  *A){
     for(int i = 0; i < N; i++)
         for(int j = 0; j < la; j++)
-            A[i * N + j] = -50 + rand() % 100;
+            A[i * N + j] = (double)(rand())/RAND_MAX*(100 + 50) - 50 ;
 }
 
 
 void printMatrix(int N, int la, double *A){
     for(int i = 0; i < N; i++){
         for(int j = 0; j < la; j++)
-            printf("%3g " , A[i * N + j]);
+            printf("%3.10lg " , A[i * N + j]);
         printf("\n");
     }
 }
 
 void printVector(int N, double *A){
     for (int i = 0;i < N; i++) {
-        printf("%3lg\n", A[i]);
+        printf("%3.10lg\n", A[i]);
     }
 }
 
@@ -39,8 +39,9 @@ int main(int argc, char* argv[]) {
     C = calloc(sizeof(double), N);
     fillMatrix(N, la, A);
     fillMatrix(1, la, B);
-   // printMatrix(N, la, A);
-  //  printVector(la, B);
+   /* printMatrix(N, la, A);
+    printf("\n");
+    printVector(la, B);*/
     DEGMV(N, A, la, alpha, beta, B, C);
     printf("\n");
     printVector(N, C);
