@@ -7,7 +7,7 @@
 void fillMatrix(int N, int la, double  *A){
     for(int i = 0; i < N; i++)
         for(int j = 0; j < la; j++)
-            A[i * N + j] = 0 + rand() % 10;
+            A[i * N + j] = -50 + rand() % 100;
 }
 
 
