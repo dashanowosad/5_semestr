@@ -21,7 +21,7 @@ HANDLE hFileMapOut;
 LPVOID MapViewOut;
 
 void Export(IMAGE_NT_HEADERS *pNtHdr, LPVOID pSrcFile){
-	//char buff[CHAR_MAX] = {'\0'};
+	char buff[CHAR_MAX] = {'\0'};
 	IMAGE_EXPORT_DIRECTORY* ExpTable;
 	char *pName, *sName, **pNames;
 	DWORD nNames;
@@ -33,20 +33,22 @@ void Export(IMAGE_NT_HEADERS *pNtHdr, LPVOID pSrcFile){
 	ExpTable=(IMAGE_EXPORT_DIRECTORY*)VAExpAddress;
 
 	sName=(char*)ImageRvaToVa(pNtHdr,pSrcFile,ExpTable->Name,NULL);
-	//printf("Name of PEF:  %s\n",sName);
-	CopyMemory(MapViewOut,sName,CHAR_MAX);
-	Sleep(10);
+	strcat(buff,"Name of PEF:  ");
+	strcat(buff,sName);
+	printf("Name of PEF:  %s\n",sName);
+	CopyMemory(MapViewOut,buff,CHAR_MAX);
+	Sleep(20);
 	
 	pNames=(char**)ImageRvaToVa(pNtHdr,pSrcFile,ExpTable->AddressOfNames,NULL);
 	nNames=ExpTable->NumberOfNames;
-	//printf("Exported data: \n");
+	printf("Exported data: \n");
 	CopyMemory(MapViewOut,"Exported data: ",CHAR_MAX);
-	Sleep(10);
+	Sleep(20);
 	for(i = 0; i < nNames; i++){
 		pName = (char*)ImageRvaToVa(pNtHdr,pSrcFile,(DWORD)*pNames,NULL);
-		//printf("%s\n",pName);
-		Sleep(10);
+		printf("%s\n",pName);
 		CopyMemory(MapViewOut,pName,CHAR_MAX);
+		Sleep(20);
 		//system("PAUSE");
 		*pNames++;
 	}
@@ -61,28 +63,32 @@ void Import(IMAGE_NT_HEADERS *pNtHdr, LPVOID pSrcFile){
 	VAExpAddress = (DWORD)ImageRvaToVa(pNtHdr,pSrcFile,RVAExpDir,NULL);//адрес виртуального массива строк
 	ImportTable=(IMAGE_IMPORT_DESCRIPTOR*)VAExpAddress;
 
-	//printf("Imported data: \n");
+	printf("Imported data: \n");
 	CopyMemory(MapViewOut,"Imported data: ",CHAR_MAX);
-	Sleep(10);
+	Sleep(20);
 	
 	while(ImportTable->Name != NULL){
 		pNames=(char**)ImageRvaToVa(pNtHdr,pSrcFile,ImportTable->FirstThunk,NULL);
 		sName=(char*)ImageRvaToVa(pNtHdr,pSrcFile,ImportTable->Name,NULL); //названия библиотек dll
 		SecureZeroMemory(MapViewOut,CHAR_MAX);
 		char buff[CHAR_MAX] = {'\0'};
-		//printf("Name of PEF:  %s\n",sName);
-		strcat(buff,"Name of PEF:   ");
+		printf("Name of PEF:  %s\n",sName);
+		strcpy(buff,"Name of PEF:   ");
 		strcat(buff,sName);
-		CopyMemory(MapViewOut,sName,CHAR_MAX);
-		Sleep(10);
+		CopyMemory(MapViewOut,buff,CHAR_MAX);
+		Sleep(20);
+		
 		//system("Pause");
 
 		while(pName != 0){
 			pName = (char*)ImageRvaToVa(pNtHdr,pSrcFile,(DWORD)*pNames+2,NULL);
 			if(pName != 0){
-				//printf("     %s\n",pName);
-				CopyMemory(MapViewOut,pName,CHAR_MAX);
-				Sleep(10);
+				char buff2[CHAR_MAX] = {'\0'};
+				strcpy(buff2,"	");
+				strcat(buff2,pName);
+				printf("     %s\n",pName);
+				CopyMemory(MapViewOut,buff2,CHAR_MAX);
+				Sleep(20);
   		 	}
 			*pNames++;
 
@@ -121,11 +127,12 @@ int main(){
     //pFirstSectionHeader = (IMAGE_SECTION_HEADER *) ((PBYTE)&pNtHdr->OptionalHeader + sizeof(IMAGE_OPTIONAL_HEADER)); // адрес первой секции
 	//pSectionHeader = GetExportSection(pFirstSectionHeader,pNtHdr); //нашли секцию экспорта
 	
-	system("Start  C:\\Users\\Дарья\\Desktop\\OS\\lab12\\lab12\\lab12b.exe");
-	//Sleep(2000);
+	system("Start  D:\\GitHub\\5_semestr\\OS\\lab12\\Malkov\\lab12\\lab12b.exe");
+	Sleep(20);
 	Export(pNtHdr,pSrcFile);
 	//system("PAUSE");
 	Import(pNtHdr,pSrcFile);
+	CopyMemory(MapViewOut,"OUT",CHAR_MAX);
 	system("PAUSE");
 
 	UnmapViewOfFile(MapViewOut);

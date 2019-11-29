@@ -9,12 +9,11 @@ int main(){
 	hFileMap = OpenFileMapping(FILE_MAP_READ,TRUE,"Lab12");
 	lpMapView = MapViewOfFile(hFileMap,FILE_MAP_READ,0,0,CHAR_MAX);
 	while(1){
-		Sleep(10);
+		Sleep(20);
 	CopyMemory(buff,lpMapView,80);
-	if (strcmp(buff, "GetAppContainerNamedObjectPath") == 0){
-		printf("%s\n",buff);
+	if (strcmp(buff, "OUT") == 0)
 		break;
-	}
+
 		
 	if (buff != NULL) printf("%s\n",buff);
 }
