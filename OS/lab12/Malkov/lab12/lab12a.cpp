@@ -127,7 +127,7 @@ int main(){
     //pFirstSectionHeader = (IMAGE_SECTION_HEADER *) ((PBYTE)&pNtHdr->OptionalHeader + sizeof(IMAGE_OPTIONAL_HEADER)); // адрес первой секции
 	//pSectionHeader = GetExportSection(pFirstSectionHeader,pNtHdr); //нашли секцию экспорта
 	
-	system("Start  D:\\GitHub\\5_semestr\\OS\\lab12\\Malkov\\lab12\\lab12b.exe");
+	system("Start  Z:\\Универ\\5_semestr\\OS\\lab12\\Malkov\\lab12\\lab12b.exe");
 	Sleep(20);
 	Export(pNtHdr,pSrcFile);
 	//system("PAUSE");
