@@ -33,7 +33,7 @@ int main(){
 				system(sys);
 				
 				printf("\nTree:\n");
-				system("pstree -U | grep -m 1 -A 1 'lab_3_2'"); 
+				system("pstree -U | grep -m 1 -A 1 'a.out'"); 
 				//printf("\n\nInformation:\n");
 			//	printf("%i/n %i/n %i/n",child1_pid,child2_pid,child3_pid);
 				

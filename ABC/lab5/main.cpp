@@ -4,10 +4,10 @@
 #include <chrono>
 
 
-
 int main(int argc, char* argv[]) {
-    int N_max = 20000;
-    int THREADS_MAX = 10;
+    int N_start;
+    int N_max;
+    int THREADS_MAX;
     int THREADS, i;
     int rows_per_thread;
     double *A, *B, *C, alpha = 1.0, beta = 1.0;
@@ -16,7 +16,9 @@ int main(int argc, char* argv[]) {
     FILE *file = NULL;
     srand(time(NULL));
     file = fopen("../stat.txt", "w");
-    for(i = 0; i <= N_max; i += 1000){
+    std::cout << "Input number of THREADS and N_start, N_max" << std::endl;
+    std::cin >> THREADS_MAX >> N_start >> N_max;
+    for(i = N_start; i <= N_max; i += 1000){
         printf("Start %d elem \n", i);
         fprintf(file, "\t\t\t N = %d\n", i);
         A = (double*)calloc(sizeof(double), i*i);
