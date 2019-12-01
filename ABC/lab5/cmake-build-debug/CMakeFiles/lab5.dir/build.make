@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/asakujaku/clion-2019.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/rino/CLion/clion-2019.2.4/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/asakujaku/clion-2019.3/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/rino/CLion/clion-2019.2.4/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/asakujaku/Files/5_semestr/ABC/lab5
+CMAKE_SOURCE_DIR = "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lab5.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/lab5.dir/flags.make
 
 CMakeFiles/lab5.dir/main.cpp.o: CMakeFiles/lab5.dir/flags.make
 CMakeFiles/lab5.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab5.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab5.dir/main.cpp.o -c /home/asakujaku/Files/5_semestr/ABC/lab5/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab5.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab5.dir/main.cpp.o -c "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/main.cpp"
 
 CMakeFiles/lab5.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab5.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/asakujaku/Files/5_semestr/ABC/lab5/main.cpp > CMakeFiles/lab5.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/main.cpp" > CMakeFiles/lab5.dir/main.cpp.i
 
 CMakeFiles/lab5.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab5.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/asakujaku/Files/5_semestr/ABC/lab5/main.cpp -o CMakeFiles/lab5.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/main.cpp" -o CMakeFiles/lab5.dir/main.cpp.s
 
 CMakeFiles/lab5.dir/BLAS.cpp.o: CMakeFiles/lab5.dir/flags.make
 CMakeFiles/lab5.dir/BLAS.cpp.o: ../BLAS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab5.dir/BLAS.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab5.dir/BLAS.cpp.o -c /home/asakujaku/Files/5_semestr/ABC/lab5/BLAS.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab5.dir/BLAS.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab5.dir/BLAS.cpp.o -c "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/BLAS.cpp"
 
 CMakeFiles/lab5.dir/BLAS.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab5.dir/BLAS.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/asakujaku/Files/5_semestr/ABC/lab5/BLAS.cpp > CMakeFiles/lab5.dir/BLAS.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/BLAS.cpp" > CMakeFiles/lab5.dir/BLAS.cpp.i
 
 CMakeFiles/lab5.dir/BLAS.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab5.dir/BLAS.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/asakujaku/Files/5_semestr/ABC/lab5/BLAS.cpp -o CMakeFiles/lab5.dir/BLAS.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/BLAS.cpp" -o CMakeFiles/lab5.dir/BLAS.cpp.s
 
 # Object files for target lab5
 lab5_OBJECTS = \
@@ -96,7 +96,7 @@ lab5: CMakeFiles/lab5.dir/BLAS.cpp.o
 lab5: CMakeFiles/lab5.dir/build.make
 lab5: /usr/lib/x86_64-linux-gnu/libpthread.so
 lab5: CMakeFiles/lab5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lab5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lab5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab5.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -109,6 +109,6 @@ CMakeFiles/lab5.dir/clean:
 .PHONY : CMakeFiles/lab5.dir/clean
 
 CMakeFiles/lab5.dir/depend:
-	cd /home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asakujaku/Files/5_semestr/ABC/lab5 /home/asakujaku/Files/5_semestr/ABC/lab5 /home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug /home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug /home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/lab5.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5" "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5" "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug" "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug" "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/lab5.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/lab5.dir/depend
 

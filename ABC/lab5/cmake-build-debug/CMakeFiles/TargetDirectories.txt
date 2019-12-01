@@ -1,3 +1,3 @@
-/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/lab5.dir
-/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/lab5.dir
+/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/edit_cache.dir

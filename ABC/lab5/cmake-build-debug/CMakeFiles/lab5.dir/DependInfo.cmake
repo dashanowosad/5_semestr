@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/asakujaku/Files/5_semestr/ABC/lab5/BLAS.cpp" "/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/lab5.dir/BLAS.cpp.o"
-  "/home/asakujaku/Files/5_semestr/ABC/lab5/main.cpp" "/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/lab5.dir/main.cpp.o"
+  "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/BLAS.cpp" "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/lab5.dir/BLAS.cpp.o"
+  "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/main.cpp" "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/CMakeFiles/lab5.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

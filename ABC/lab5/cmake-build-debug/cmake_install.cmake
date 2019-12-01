@@ -1,4 +1,4 @@
-# Install script for directory: /home/asakujaku/Files/5_semestr/ABC/lab5
+# Install script for directory: /home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/asakujaku/Files/5_semestr/ABC/lab5/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab5/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

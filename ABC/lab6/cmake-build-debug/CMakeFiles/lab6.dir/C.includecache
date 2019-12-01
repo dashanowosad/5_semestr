@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab6/BLAS.c
-BLAS.h
-/home/rino/Рабочий стол/Institut/5_semestr/ABC/lab6/BLAS.h
-stdio.h
--
-malloc.h
--
-
 /home/rino/Рабочий стол/Institut/5_semestr/ABC/lab6/BLAS.h
 
 /home/rino/Рабочий стол/Institut/5_semestr/ABC/lab6/main.c
