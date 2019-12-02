@@ -1,0 +1,10 @@
+Block Size = 1, time = 26.047764
+Block Size = 2, time = 12.543577
+Block Size = 4, time = 9.064607
+Block Size = 8, time = 8.052030
+Block Size = 16, time = 7.982556
+Block Size = 32, time = 8.278271
+Block Size = 64, time = 8.369715
+Block Size = 128, time = 8.258438
+Block Size = 256, time = 8.204065
+Block Size = 512, time = 8.193544
