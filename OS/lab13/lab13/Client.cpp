@@ -1,12 +1,12 @@
 #include <windows.h>
 #include <stdio.h>
-
+#include <conio.h>
 int main(){
 	char c; // для выхода
 	HANDLE hPipe;
-	char MessageIn[256], MessageOut[256], machineName[80], pipeName[80];
+	char MessageIn[256]="", MessageOut[256]="", machineName[80], pipeName[80],MessageIn1[256]="";
 	DWORD BytesWrite, BytesRead;
-	//LPTSTR lpPipeName = TEXT("\\\\.\\pipe\\MyPipe");
+
 	printf("Name of your mashin: ");
 	scanf("%s",&machineName);
 	wsprintf(pipeName,"\\\\%s\\pipe\\MyPipe",machineName);
@@ -34,19 +34,35 @@ int main(){
 				printf("\nServer was close\nPress any key to out");
 				break;
 		}
-		else printf("Client message:  %s\n",MessageIn);
-		
+		else {
+			if (strcmp(MessageIn1, MessageIn) != 0){
+				printf("Someone's' message:  %s\n",MessageIn);
+				memset(MessageIn1,0,256);
+				strcpy(MessageIn1,MessageIn);
+			}
+			
+			
+		}
+
+
 		//отправка сообщения
-		printf("Your message:  ");
-		scanf("%s",MessageOut);
+		if (kbhit()){
+			printf("Your message:  ");
+			scanf("%s",MessageOut);
+		}
+		
+
 		WriteFile(
 			hPipe,
 			MessageOut,
 			sizeof(MessageOut),
 			&BytesWrite,
 			NULL);
+
 	}
 	
 	scanf("%c",&c);
 	CloseHandle(hPipe);
+	system("PAUSE");
+	return 0;
 }
