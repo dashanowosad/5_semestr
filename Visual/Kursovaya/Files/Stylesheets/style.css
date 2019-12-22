@@ -1,0 +1,55 @@
+
+QTableView{
+
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    background: #F5FFFA;
+    color: #2E8B57;
+    font-weight: bold;
+
+
+}
+
+QHeaderView::section:horizontal{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 13px;
+    font-weight: bold;
+    background: #E6E6FA;
+    color: #8470FF;
+
+}
+
+QHeaderView::section:vertical{
+    background: #E6E6FA;
+    color: #8470FF;
+}
+
+QTableCornerButton::section {background: #E6E6FA}
+
+QTableView::item {
+    border-style: solid;
+    border-width: 0px 1px 1px 0px;
+    border-color: #99CCFF;
+    padding-left: 50px;
+
+}
+QTableView::item:selected{
+    color: #2E8B57;
+    background: #C1FFC1;
+}
+QMainWindow{background: #abcdef}
+
+/*QLabel{background: #d3deed;}*/
+
+QPushButton{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 3px;
+    background: #00CD66;
+
+}
+QPushButton:hover {background: #77dd77 }
+QPushButton:pressed{background: #00a550 }
+
+QLabel#ImageLable{border: 3px dotted #191970}
