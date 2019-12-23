@@ -9,6 +9,9 @@ AddCategory::AddCategory(QWidget *parent) :
 {
 
     ui->setupUi(this);
+
+    this->setWindowIcon(QIcon("../Kursovaya/Files/Icons/document_add_icon_124988.svg"));
+
     ui->pushButton->setShortcut(QKeySequence("CTRL+S"));
     ui->pushButton->setToolTip("Подтверждение добавления категории(CTRL+S)");
 }

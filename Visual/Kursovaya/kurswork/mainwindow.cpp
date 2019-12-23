@@ -12,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
+
+    this->setWindowIcon(QIcon("../Kursovaya/Files/Icons/compose_icon_125000.svg"));
+
     ui->SearchButton->setShortcut(QKeySequence("CTRL+F"));
     ui->SearchButton->setToolTip("Поиск товара по имени(CTRL+F)");
 
@@ -26,6 +29,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->pushButton->setShortcut(QKeySequence("CTRL+BACKSPACE"));
     ui->pushButton->setToolTip("Отмена поиска(CTRL+BACKSPACE)");
+
+    ui->HelpButton->setIcon(QIcon("../Kursovaya/Files/Icons/information_outline_icon_124942.svg"));
+    ui->HelpButton->setShortcut(QKeySequence("CTRL+H"));
+    ui->HelpButton->setToolTip("Открытие справки(CTRL+H)");
 
     this->query.exec("SELECT name from sqlite_master where type = 'table'");
     if(this->query.first())
@@ -119,8 +126,16 @@ void MainWindow::UpdateCategoryList(){
     }
     ui->CategoryList->insertSeparator(ui->CategoryList->count());
     ui->CategoryList->addItem("Добавить категорию...");
-    ui->CategoryList->setCurrentText(this->Category);;
+    ui->CategoryList->setCurrentText(this->Category);
     DrawTable();
+}
+
+void MainWindow::DiscardCategory(){
+    this->query.exec("SELECT name from sqlite_master where type = 'table'");
+    if(this->query.first()){
+        this->Category = this->query.value(0).toString();
+        this->SQLrequest = "SELECT Name, Number, Weight, Cost, Image FROM '" + this->Category + "'";
+    }
 }
 
 void MainWindow::on_AddButton_clicked(){
@@ -156,7 +171,7 @@ void MainWindow::on_SearchButton_clicked(){
     if(ui->SearchLine->text().isEmpty())
         QMessageBox::warning(nullptr, "Ошибка!!!","Запрос для поиска пуст.");
     else{
-        this->SQLrequest = "SELECT Name, Number, Weight, Cost, Image FROM '" + this->Category + "' WHERE Name  = '" + ui->SearchLine->text() + "'";
+        this->SQLrequest = "SELECT Name, Number, Weight, Cost, Image FROM '" + this->Category + "' WHERE Name  LIKE '" + ui->SearchLine->text() + "%'";
         ui->pushButton->show();
         DrawTable();
     }
@@ -182,7 +197,14 @@ void MainWindow::on_pushButton_2_clicked(){
     this->deletecategory = new DeleteCategory;
     this->file = new QFile(":/style.css");
     this->file->open(QFile::ReadOnly);
+    connect(this->deletecategory, &DeleteCategory::DiscardCategory, this, &MainWindow::DiscardCategory);
     connect(this->deletecategory, &DeleteCategory::UpdateCategoryList, this, &MainWindow::UpdateCategoryList);
     this->deletecategory->setStyleSheet(file->readAll());
     this->deletecategory->show();
+}
+
+
+void MainWindow::on_HelpButton_clicked(){
+    help = new Help;
+    help->show();
 }

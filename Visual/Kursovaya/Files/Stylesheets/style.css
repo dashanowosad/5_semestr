@@ -53,3 +53,10 @@ QPushButton:hover {background: #77dd77 }
 QPushButton:pressed{background: #00a550 }
 
 QLabel#ImageLable{border: 3px dotted #191970}
+QTextBrowser{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    background: #fafad2;
+    font-style: italic;
+    color: #ffa000;
+}
+

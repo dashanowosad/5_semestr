@@ -10,6 +10,18 @@
     <height>93</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>514</width>
+    <height>93</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>514</width>
+    <height>93</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Удаление категории</string>
   </property>

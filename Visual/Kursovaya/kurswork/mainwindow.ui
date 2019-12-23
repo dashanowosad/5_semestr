@@ -150,8 +150,8 @@
      <rect>
       <x>0</x>
       <y>110</y>
-      <width>1021</width>
-      <height>451</height>
+      <width>1024</width>
+      <height>490</height>
      </rect>
     </property>
    </widget>
@@ -184,6 +184,19 @@
      <string>Удалить категорию</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="HelpButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -194,24 +207,6 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="FileMenu">
-    <property name="maximumSize">
-     <size>
-      <width>1024</width>
-      <height>720</height>
-     </size>
-    </property>
-    <property name="title">
-     <string>Файл</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="HelpMenu">
-    <property name="title">
-     <string>?</string>
-    </property>
-   </widget>
-   <addaction name="FileMenu"/>
-   <addaction name="HelpMenu"/>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

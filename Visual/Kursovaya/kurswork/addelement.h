@@ -22,8 +22,8 @@ private:
     Ui::AddElement *ui;
     QSqlQuery query;
     QString category;
-    float Cost;
-    float Weight;
+    double Cost;
+    double Weight;
     int Number;
     QString Name;
     QByteArray Image;

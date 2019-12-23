@@ -21,6 +21,8 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_CategoryList_activated(const QString &arg1);
+
 private:
     Ui::deleteelement *ui;
     QSqlQuery query;

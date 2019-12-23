@@ -10,6 +10,9 @@ AddElement::AddElement(QWidget *parent) :
     ui(new Ui::AddElement)
 {
     ui->setupUi(this);
+
+    this->setWindowIcon(QIcon("../Kursovaya/Files/Icons/document_add_icon_124988.svg"));
+
     ui->AddImageButton->setShortcut(QKeySequence("CTRL+O"));
     ui->AddImageButton->setToolTip("Открытие диалога для добавления изображения(CTRL+O)");
     ui->AddButton->setShortcut(QKeySequence("CTRL+S"));
@@ -51,8 +54,8 @@ void AddElement::on_AddButton_clicked(){
     }else{
         this->Name = ui->NameLineEdit->text();
         this->Number = ui->NumberSpinBox->value();
-        this->Cost = static_cast<float>(ui->CostSpinBox->value());
-        this->Weight = static_cast<float>(ui->WeightSpinBox->value());
+        this->Cost = ui->CostSpinBox->value();
+        this->Weight = ui->WeightSpinBox->value();
         this->query.prepare("INSERT INTO'" + this->category + "'(Name, Number, Weight, Cost, Image) VALUES(:Name, :Number, :Weight, :Cost, :Image)");
         this->query.bindValue(":Name", this->Name);
         this->query.bindValue(":Number", this->Number);

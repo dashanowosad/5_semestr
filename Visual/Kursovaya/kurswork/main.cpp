@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "help.h"
 #include <QApplication>
 #include <QColor>
 #include <QFile>
@@ -52,6 +53,9 @@ int main(int argc, char *argv[])
     splash.finish(&w);
     w.setStyleSheet(file.readAll());
     w.show();
+
+    //Help p;
+    //p.show();
 
     return a.exec();
 }

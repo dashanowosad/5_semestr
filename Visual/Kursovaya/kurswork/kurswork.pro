@@ -29,6 +29,7 @@ SOURCES += \
         addelement.cpp \
         deletecategory.cpp \
         deleteelement.cpp \
+        help.cpp \
         main.cpp \
         mainwindow.cpp
 
@@ -37,6 +38,7 @@ HEADERS += \
         addelement.h \
         deletecategory.h \
         deleteelement.h \
+        help.h \
         mainwindow.h
 
 FORMS += \
@@ -44,6 +46,7 @@ FORMS += \
         addelement.ui \
         deletecategory.ui \
         deleteelement.ui \
+        help.ui \
         mainwindow.ui
 
 # Default rules for deployment.

@@ -28,6 +28,7 @@ private:
     void DrawCategoryList();
 signals:
     void UpdateCategoryList();
+    void DiscardCategory();
 };
 
 #endif // DELETECATEGORY_H

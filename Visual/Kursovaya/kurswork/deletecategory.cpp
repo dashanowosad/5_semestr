@@ -8,6 +8,7 @@ DeleteCategory::DeleteCategory(QWidget *parent) :
     ui(new Ui::DeleteCategory)
 {
     ui->setupUi(this);
+    this->setWindowIcon(QIcon("../Kursovaya/Files/Icons/trash_icon_124834.svg"));
     ui->OkButton->setShortcut(QKeySequence("CTRL+S"));
     ui->OkButton->setToolTip("Подтверждение удаления(CTRL+S)");
     this->query.exec("SELECT name from sqlite_master where type = 'table'");
@@ -38,6 +39,7 @@ void DeleteCategory::DrawCategoryList(){
 void DeleteCategory::on_OkButton_clicked(){
     this->query.exec("DROP TABLE IF EXISTS '" + this->Category + "'");
     QMessageBox::information(nullptr, "Успешно!!!", "Категория успешно удалена.");
+    emit DiscardCategory();
     emit UpdateCategoryList();
     this->close();
 }
